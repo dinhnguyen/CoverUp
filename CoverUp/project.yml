@@ -31,3 +31,19 @@ targets:
         CODE_SIGN_ENTITLEMENTS: CoverUp.entitlements
     entitlements:
       path: CoverUp.entitlements
+
+  CoverUpTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: ../CoverUpTests
+        excludes:
+          - "**/.DS_Store"
+    dependencies:
+      - target: CoverUp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.coverup.tests
+        GENERATE_INFOPLIST_FILE: YES
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"
+
