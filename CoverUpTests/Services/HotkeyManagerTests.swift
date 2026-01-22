@@ -13,4 +13,10 @@ final class HotkeyManagerTests: XCTestCase {
         XCTAssertTrue(config.modifiers.isEmpty)
         XCTAssertEqual(config.type, .menuItem)
     }
+
+    func test_registerEventTap_withoutAccessibility_returnsFalse() {
+        let config = HotkeyConfiguration(type: .eventTap, keyCode: 49, modifiers: [controlKey])
+        let result = HotkeyManager.registerEventTap(with: config) {}
+        XCTAssertFalse(result)
+    }
 }
