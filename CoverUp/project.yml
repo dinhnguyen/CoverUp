@@ -1,0 +1,33 @@
+name: CoverUp
+options:
+  bundleIdPrefix: com.coverup
+  deploymentTarget:
+    macOS: "12.0"
+  xcodeVersion: "15.0"
+
+settings:
+  base:
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  CoverUp:
+    type: application
+    platform: macOS
+    sources:
+      - path: CoverUp
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.coverup.app
+        INFOPLIST_FILE: Resources/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        COMBINE_HIDPI_IMAGES: YES
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_ENTITLEMENTS: CoverUp/CoverUp.entitlements
+    entitlements:
+      path: CoverUp/CoverUp.entitlements
