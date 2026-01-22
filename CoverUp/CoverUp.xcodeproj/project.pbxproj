@@ -7,27 +7,76 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1523F220C4A55F906782EEB6 /* TargetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B4649B57C3E318BDE8070 /* TargetApp.swift */; };
+		21FC3B464C28889DC4454FF1 /* HotkeyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B0B0D20B98076CEE4C1A7 /* HotkeyManagerTests.swift */; };
+		2298EC09B9B2887247745D07 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5C1B876D03D53D54D8C8C /* ContentViewTests.swift */; };
+		5A329286C8181D9158D9E93A /* AppPickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D8D542DDF494DCD25EDFDF /* AppPickerViewTests.swift */; };
+		611CB824FF369BAE3E89BFC1 /* HotkeyConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE38B5B5FE1CF4CE4CE1149 /* HotkeyConfigView.swift */; };
+		62025C0BB9E1274EE721ECD7 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7B2E7522BEA96CB4A70A5 /* LoginItemManager.swift */; };
+		6867887B176EED62CD5F04A2 /* AppPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B2063E867EF4DFD4FA5DE /* AppPickerView.swift */; };
+		74D8D4557F2BF72EF861BAB5 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA2D6CCF2E0F06822DA86C /* WindowManager.swift */; };
+		7A77E1449B548A0512C4D3E9 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB10B9EDB8BD36E370B4A4E /* HotkeyManager.swift */; };
+		7E9D3B65657CAC2D89CE3262 /* LoginItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A197DE894D80F6D437AA00A /* LoginItemManagerTests.swift */; };
+		7F1009CB2D8ABDBE92B9BD93 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B721E643F245643CB9280D /* SettingsManager.swift */; };
+		93ACEC50E68CD47B4461C2EE /* CoverUp.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 94471C2289E768CF640A4BBD /* CoverUp.xcodeproj */; };
+		A14AC6D470883A1337AF69CF /* WindowManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852D22091EE1BD2FCBE638E /* WindowManagerTests.swift */; };
+		A3AEA377AD6C51856A8E9F36 /* TargetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D6454E2CD34DA9F1FFEF8 /* TargetAppTests.swift */; };
+		B53533C43338799E81F944A3 /* AppListerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BD2DA08CE600CE9A9DD1AC /* AppListerTests.swift */; };
 		B7980080F0AFDF19702FC756 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB888C1FC7CAC79E6A6BE5B /* ContentView.swift */; };
+		BBE196BDD511ED7A519EE322 /* SettingsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5FF1B4627B563BF7C9E98 /* SettingsManagerTests.swift */; };
 		F16407560BDDC73838F7B7AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926D7BC3C55DD07E931CED32 /* Assets.xcassets */; };
 		F34C6CAC9B0EA24CF5CB63CE /* CoverUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C5828EAE03CA44FCB1A80 /* CoverUpApp.swift */; };
 		F9B7FBFE395F690F7FD5E0C8 /* project.yml in Resources */ = {isa = PBXBuildFile; fileRef = 03927F10FE24910487C01E8F /* project.yml */; };
+		FBADEA69A8094B9A52512F49 /* HotkeyConfigViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C8DBBF81590A210AFE841 /* HotkeyConfigViewTests.swift */; };
+		FF4539CB01A834168098D809 /* AppLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C4B5C39A88481C4C9D39E /* AppLister.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		712C5A8F8E30A577EAEB509A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26BADE79788A9DB13C35A957 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B63E065E2D7EF07AC33E7D9;
+			remoteInfo = CoverUp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		03927F10FE24910487C01E8F /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
+		181C4B5C39A88481C4C9D39E /* AppLister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLister.swift; sourceTree = "<group>"; };
+		1D9C8DBBF81590A210AFE841 /* HotkeyConfigViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyConfigViewTests.swift; sourceTree = "<group>"; };
+		26BD2DA08CE600CE9A9DD1AC /* AppListerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListerTests.swift; sourceTree = "<group>"; };
 		2DB888C1FC7CAC79E6A6BE5B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		36B721E643F245643CB9280D /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		45D8D542DDF494DCD25EDFDF /* AppPickerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPickerViewTests.swift; sourceTree = "<group>"; };
+		4C1D6454E2CD34DA9F1FFEF8 /* TargetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetAppTests.swift; sourceTree = "<group>"; };
+		5E3B2063E867EF4DFD4FA5DE /* AppPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPickerView.swift; sourceTree = "<group>"; };
 		62047DF7E911DD038F4446DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7FE38B5B5FE1CF4CE4CE1149 /* HotkeyConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyConfigView.swift; sourceTree = "<group>"; };
+		8852D22091EE1BD2FCBE638E /* WindowManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManagerTests.swift; sourceTree = "<group>"; };
+		8A197DE894D80F6D437AA00A /* LoginItemManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManagerTests.swift; sourceTree = "<group>"; };
+		8CC5C1B876D03D53D54D8C8C /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
+		8EB5FF1B4627B563BF7C9E98 /* SettingsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManagerTests.swift; sourceTree = "<group>"; };
 		926D7BC3C55DD07E931CED32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94471C2289E768CF640A4BBD /* CoverUp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CoverUp.xcodeproj; sourceTree = "<group>"; };
+		A00B4649B57C3E318BDE8070 /* TargetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetApp.swift; sourceTree = "<group>"; };
+		A9FAB2CBD4E973A91144591C /* CoverUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoverUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAEA2D6CCF2E0F06822DA86C /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		ADB10B9EDB8BD36E370B4A4E /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
 		C508800A187020D4ACA5A910 /* CoverUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoverUp.entitlements; sourceTree = "<group>"; };
 		E40C058FFCF307838807829F /* CoverUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoverUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78C5828EAE03CA44FCB1A80 /* CoverUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverUpApp.swift; sourceTree = "<group>"; };
+		F8D7B2E7522BEA96CB4A70A5 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
+		F95B0B0D20B98076CEE4C1A7 /* HotkeyManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		1057312CD3E03F16624E3AD6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E3B2063E867EF4DFD4FA5DE /* AppPickerView.swift */,
 				2DB888C1FC7CAC79E6A6BE5B /* ContentView.swift */,
+				7FE38B5B5FE1CF4CE4CE1149 /* HotkeyConfigView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -41,31 +90,99 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		411BBFE5BF08896B0D8CCDFB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				26BD2DA08CE600CE9A9DD1AC /* AppListerTests.swift */,
+				F95B0B0D20B98076CEE4C1A7 /* HotkeyManagerTests.swift */,
+				8A197DE894D80F6D437AA00A /* LoginItemManagerTests.swift */,
+				8EB5FF1B4627B563BF7C9E98 /* SettingsManagerTests.swift */,
+				8852D22091EE1BD2FCBE638E /* WindowManagerTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		434589C3C416EACF8E19BA0D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				181C4B5C39A88481C4C9D39E /* AppLister.swift */,
+				ADB10B9EDB8BD36E370B4A4E /* HotkeyManager.swift */,
+				F8D7B2E7522BEA96CB4A70A5 /* LoginItemManager.swift */,
+				36B721E643F245643CB9280D /* SettingsManager.swift */,
+				AAEA2D6CCF2E0F06822DA86C /* WindowManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		46E5032092540C3645D70929 = {
 			isa = PBXGroup;
 			children = (
 				F9FEC77F09C67A29BD6D105C /* CoverUp */,
+				578DC64350D1DDA9F333F983 /* CoverUpTests */,
+				F450645BB19F396667F4ACF0 /* Models */,
 				2A7BA072B492DC95B94FB7FD /* Resources */,
+				434589C3C416EACF8E19BA0D /* Services */,
 				1057312CD3E03F16624E3AD6 /* Views */,
 				99D9B0BDA6E732A6381257D4 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		578DC64350D1DDA9F333F983 /* CoverUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				9555F70D67D9B4FBB0D9A62E /* Models */,
+				411BBFE5BF08896B0D8CCDFB /* Services */,
+				8BD8DE3DF842E43E840BD746 /* Views */,
+			);
+			name = CoverUpTests;
+			path = ../CoverUpTests;
+			sourceTree = "<group>";
+		};
+		8BD8DE3DF842E43E840BD746 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				45D8D542DDF494DCD25EDFDF /* AppPickerViewTests.swift */,
+				8CC5C1B876D03D53D54D8C8C /* ContentViewTests.swift */,
+				1D9C8DBBF81590A210AFE841 /* HotkeyConfigViewTests.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9555F70D67D9B4FBB0D9A62E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C1D6454E2CD34DA9F1FFEF8 /* TargetAppTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		99D9B0BDA6E732A6381257D4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				E40C058FFCF307838807829F /* CoverUp.app */,
+				A9FAB2CBD4E973A91144591C /* CoverUpTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F450645BB19F396667F4ACF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A00B4649B57C3E318BDE8070 /* TargetApp.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F9FEC77F09C67A29BD6D105C /* CoverUp */ = {
 			isa = PBXGroup;
 			children = (
 				C508800A187020D4ACA5A910 /* CoverUp.entitlements */,
+				94471C2289E768CF640A4BBD /* CoverUp.xcodeproj */,
 				F78C5828EAE03CA44FCB1A80 /* CoverUpApp.swift */,
 				03927F10FE24910487C01E8F /* project.yml */,
+				F450645BB19F396667F4ACF0 /* Models */,
 				2A7BA072B492DC95B94FB7FD /* Resources */,
+				434589C3C416EACF8E19BA0D /* Services */,
 				1057312CD3E03F16624E3AD6 /* Views */,
 			);
 			name = CoverUp;
@@ -93,6 +210,24 @@
 			productReference = E40C058FFCF307838807829F /* CoverUp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A3FFDFD197E869F91FF9AEE4 /* CoverUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3309C93171CD611F0E76B20 /* Build configuration list for PBXNativeTarget "CoverUpTests" */;
+			buildPhases = (
+				8E2E01D2DDB281BC6DDBAB9F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9DF99AC78C4E4D4B179F4AE /* PBXTargetDependency */,
+			);
+			name = CoverUpTests;
+			packageProductDependencies = (
+			);
+			productName = CoverUpTests;
+			productReference = A9FAB2CBD4E973A91144591C /* CoverUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -103,6 +238,10 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					1B63E065E2D7EF07AC33E7D9 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					A3FFDFD197E869F91FF9AEE4 = {
 						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
@@ -123,6 +262,7 @@
 			projectRoot = "";
 			targets = (
 				1B63E065E2D7EF07AC33E7D9 /* CoverUp */,
+				A3FFDFD197E869F91FF9AEE4 /* CoverUpTests */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F16407560BDDC73838F7B7AB /* Assets.xcassets in Resources */,
+				93ACEC50E68CD47B4461C2EE /* CoverUp.xcodeproj in Resources */,
 				F9B7FBFE395F690F7FD5E0C8 /* project.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,14 +285,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF4539CB01A834168098D809 /* AppLister.swift in Sources */,
+				6867887B176EED62CD5F04A2 /* AppPickerView.swift in Sources */,
 				B7980080F0AFDF19702FC756 /* ContentView.swift in Sources */,
 				F34C6CAC9B0EA24CF5CB63CE /* CoverUpApp.swift in Sources */,
+				611CB824FF369BAE3E89BFC1 /* HotkeyConfigView.swift in Sources */,
+				7A77E1449B548A0512C4D3E9 /* HotkeyManager.swift in Sources */,
+				62025C0BB9E1274EE721ECD7 /* LoginItemManager.swift in Sources */,
+				7F1009CB2D8ABDBE92B9BD93 /* SettingsManager.swift in Sources */,
+				1523F220C4A55F906782EEB6 /* TargetApp.swift in Sources */,
+				74D8D4557F2BF72EF861BAB5 /* WindowManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E2E01D2DDB281BC6DDBAB9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B53533C43338799E81F944A3 /* AppListerTests.swift in Sources */,
+				5A329286C8181D9158D9E93A /* AppPickerViewTests.swift in Sources */,
+				2298EC09B9B2887247745D07 /* ContentViewTests.swift in Sources */,
+				FBADEA69A8094B9A52512F49 /* HotkeyConfigViewTests.swift in Sources */,
+				21FC3B464C28889DC4454FF1 /* HotkeyManagerTests.swift in Sources */,
+				7E9D3B65657CAC2D89CE3262 /* LoginItemManagerTests.swift in Sources */,
+				BBE196BDD511ED7A519EE322 /* SettingsManagerTests.swift in Sources */,
+				A3AEA377AD6C51856A8E9F36 /* TargetAppTests.swift in Sources */,
+				A14AC6D470883A1337AF69CF /* WindowManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F9DF99AC78C4E4D4B179F4AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B63E065E2D7EF07AC33E7D9 /* CoverUp */;
+			targetProxy = 712C5A8F8E30A577EAEB509A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		42CD4CFDF0436F08EFF69144 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coverup.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoverUp.app/Contents/MacOS/CoverUp";
+			};
+			name = Release;
+		};
 		4CFFB2F09147391DCBECCB6A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -240,6 +426,19 @@
 			};
 			name = Release;
 		};
+		A187A963E2B6C6A6BB6AF9C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coverup.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoverUp.app/Contents/MacOS/CoverUp";
+			};
+			name = Debug;
+		};
 		CD62F57A31C46B6FCE18311C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -315,6 +514,15 @@
 			buildConfigurations = (
 				CD62F57A31C46B6FCE18311C /* Debug */,
 				6F81C067E29B2BE705335A12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A3309C93171CD611F0E76B20 /* Build configuration list for PBXNativeTarget "CoverUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A187A963E2B6C6A6BB6AF9C4 /* Debug */,
+				42CD4CFDF0436F08EFF69144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
