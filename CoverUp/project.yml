@@ -17,7 +17,7 @@ targets:
     type: application
     platform: macOS
     sources:
-      - path: CoverUp
+      - path: .
         excludes:
           - "**/.DS_Store"
     settings:
@@ -28,6 +28,6 @@ targets:
         COMBINE_HIDPI_IMAGES: YES
         LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"
         ENABLE_HARDENED_RUNTIME: YES
-        CODE_SIGN_ENTITLEMENTS: CoverUp/CoverUp.entitlements
+        CODE_SIGN_ENTITLEMENTS: CoverUp.entitlements
     entitlements:
-      path: CoverUp/CoverUp.entitlements
+      path: CoverUp.entitlements
