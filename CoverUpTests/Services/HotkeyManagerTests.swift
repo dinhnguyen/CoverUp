@@ -19,4 +19,9 @@ final class HotkeyManagerTests: XCTestCase {
         let result = HotkeyManager.registerEventTap(with: config) {}
         XCTAssertFalse(result)
     }
+
+    func test_registerMenuItem_withValidConfig_doesNotCrash() {
+        let config = HotkeyConfiguration(type: .menuItem, keyCode: 49, modifiers: [controlKey])
+        HotkeyManager.registerMenuItemShortcut(with: config, action: {})
+    }
 }
