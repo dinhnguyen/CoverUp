@@ -2,19 +2,36 @@ import Foundation
 import ServiceManagement
 
 enum LoginItemManager {
-    private static let helperBundleId = "com.coverup.app.LoginHelper"
-
-    static func setLaunchAtLogin(enabled: Bool, bundleId: String? = nil) -> Bool {
-        let id = bundleId ?? helperBundleId
+    @discardableResult
+    static func setLaunchAtLogin(enabled: Bool) -> Bool {
+        let service = SMAppService.mainApp
 
         if enabled {
-            return SMAppService.loginItem.setStatus() == .enabled
+            do {
+                if service.status == .enabled {
+                    return true
+                }
+                try service.register()
+                return true
+            } catch {
+                print("Failed to enable launch at login: \(error)")
+                return false
+            }
         } else {
-            return SMAppService.loginItem.setStatus() == .disabled
+            do {
+                if service.status == .notRegistered {
+                    return true
+                }
+                try service.unregister()
+                return true
+            } catch {
+                print("Failed to disable launch at login: \(error)")
+                return false
+            }
         }
     }
 
     static var isLaunchAtLoginEnabled: Bool {
-        SMAppService.loginItem.status == .enabled
+        SMAppService.mainApp.status == .enabled
     }
 }

@@ -6,8 +6,16 @@ struct AppPickerView: View {
     @State private var searchText = ""
     @State private var allApps: [TargetApp] = []
     @State private var isLoading = true
+    @State private var localSelection: Set<TargetApp> = []
 
     let onConfirm: () -> Void
+
+    private var filteredApps: [TargetApp] {
+        if searchText.isEmpty {
+            return allApps
+        }
+        return allApps.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -30,25 +38,26 @@ struct AppPickerView: View {
                     .textFieldStyle(.roundedBorder)
                     .padding(.horizontal)
 
-                List(allApps.filter { app in
-                    searchText.isEmpty || app.name.localizedCaseInsensitiveContains(searchText)
-                }, selection: .constant(selectedApps)) { app in
-                    HStack {
-                        Image(systemName: "app.fill")
-                            .foregroundStyle(.secondary)
-                        Text(app.name)
-                        Spacer()
-                        if selectedApps.contains(app) {
-                            Image(systemName: "checkmark")
-                                .foregroundStyle(.accentColor)
+                List {
+                    ForEach(filteredApps, id: \.id) { app in
+                        HStack(spacing: 8) {
+                            Image(systemName: localSelection.contains(app) ? "checkmark.square.fill" : "square")
+                                .foregroundColor(localSelection.contains(app) ? .accentColor : .gray)
+                                .font(.title3)
+                                .onTapGesture {
+                                    toggleApp(app)
+                                }
+
+                            Text(app.name)
+                                .onTapGesture {
+                                    toggleApp(app)
+                                }
+
+                            Spacer()
                         }
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        if selectedApps.contains(app) {
-                            selectedApps.remove(app)
-                        } else {
-                            selectedApps.insert(app)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            toggleApp(app)
                         }
                     }
                 }
@@ -56,11 +65,12 @@ struct AppPickerView: View {
 
                 HStack {
                     Button("Clear") {
-                        selectedApps.removeAll()
+                        localSelection.removeAll()
                     }
-                    .disabled(selectedApps.isEmpty)
+                    .disabled(localSelection.isEmpty)
                     Spacer()
-                    Button("Confirm") {
+                    Button("Confirm (\(localSelection.count))") {
+                        selectedApps = localSelection
                         onConfirm()
                         dismiss()
                     }
@@ -72,7 +82,16 @@ struct AppPickerView: View {
         }
         .frame(width: 400, height: 500)
         .onAppear {
+            localSelection = selectedApps
             loadApps()
+        }
+    }
+
+    private func toggleApp(_ app: TargetApp) {
+        if localSelection.contains(app) {
+            localSelection.remove(app)
+        } else {
+            localSelection.insert(app)
         }
     }
 

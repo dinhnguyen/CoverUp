@@ -1,4 +1,5 @@
 import XCTest
+import Carbon
 @testable import CoverUp
 
 final class HotkeyManagerTests: XCTestCase {
@@ -15,13 +16,13 @@ final class HotkeyManagerTests: XCTestCase {
     }
 
     func test_registerEventTap_withoutAccessibility_returnsFalse() {
-        let config = HotkeyConfiguration(type: .eventTap, keyCode: 49, modifiers: [controlKey])
+        let config = HotkeyConfiguration(type: .eventTap, keyCode: 49, modifiers: [UInt32(controlKey)])
         let result = HotkeyManager.registerEventTap(with: config) {}
         XCTAssertFalse(result)
     }
 
     func test_registerMenuItem_withValidConfig_doesNotCrash() {
-        let config = HotkeyConfiguration(type: .menuItem, keyCode: 49, modifiers: [controlKey])
+        let config = HotkeyConfiguration(type: .menuItem, keyCode: 49, modifiers: [UInt32(controlKey)])
         HotkeyManager.registerMenuItemShortcut(with: config, action: {})
     }
 }

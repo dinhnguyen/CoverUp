@@ -26,5 +26,7 @@
     <string>Copyright © 2026. All rights reserved.</string>
     <key>NSPrincipalClass</key>
     <string>NSApplication</string>
+    <key>NSAppleEventsUsageDescription</key>
+    <string>CoverUp needs permission to minimize windows of target applications.</string>
 </dict>
 </plist>

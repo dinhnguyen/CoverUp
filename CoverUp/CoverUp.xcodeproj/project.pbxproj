@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB67D32A578D9AD5EBFBEEA /* KeyCodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6E372292F09BAC9D4B2DA /* KeyCodeMapper.swift */; };
 		1523F220C4A55F906782EEB6 /* TargetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B4649B57C3E318BDE8070 /* TargetApp.swift */; };
 		21FC3B464C28889DC4454FF1 /* HotkeyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B0B0D20B98076CEE4C1A7 /* HotkeyManagerTests.swift */; };
 		2298EC09B9B2887247745D07 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5C1B876D03D53D54D8C8C /* ContentViewTests.swift */; };
+		2B42F81273C8D5DEBCBBBCD4 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC13F25AE39A16E459CE4FC6 /* MainWindowController.swift */; };
 		5A329286C8181D9158D9E93A /* AppPickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D8D542DDF494DCD25EDFDF /* AppPickerViewTests.swift */; };
 		611CB824FF369BAE3E89BFC1 /* HotkeyConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE38B5B5FE1CF4CE4CE1149 /* HotkeyConfigView.swift */; };
 		62025C0BB9E1274EE721ECD7 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7B2E7522BEA96CB4A70A5 /* LoginItemManager.swift */; };
@@ -53,6 +55,7 @@
 		5E3B2063E867EF4DFD4FA5DE /* AppPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPickerView.swift; sourceTree = "<group>"; };
 		62047DF7E911DD038F4446DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7FE38B5B5FE1CF4CE4CE1149 /* HotkeyConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyConfigView.swift; sourceTree = "<group>"; };
+		81C6E372292F09BAC9D4B2DA /* KeyCodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCodeMapper.swift; sourceTree = "<group>"; };
 		8852D22091EE1BD2FCBE638E /* WindowManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManagerTests.swift; sourceTree = "<group>"; };
 		8A197DE894D80F6D437AA00A /* LoginItemManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManagerTests.swift; sourceTree = "<group>"; };
 		8CC5C1B876D03D53D54D8C8C /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
@@ -68,17 +71,32 @@
 		F78C5828EAE03CA44FCB1A80 /* CoverUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverUpApp.swift; sourceTree = "<group>"; };
 		F8D7B2E7522BEA96CB4A70A5 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
 		F95B0B0D20B98076CEE4C1A7 /* HotkeyManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManagerTests.swift; sourceTree = "<group>"; };
+		FC13F25AE39A16E459CE4FC6 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		0997FC5C2F2211A50091E9F0 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1057312CD3E03F16624E3AD6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5E3B2063E867EF4DFD4FA5DE /* AppPickerView.swift */,
 				2DB888C1FC7CAC79E6A6BE5B /* ContentView.swift */,
 				7FE38B5B5FE1CF4CE4CE1149 /* HotkeyConfigView.swift */,
+				FC13F25AE39A16E459CE4FC6 /* MainWindowController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2003E28A0637CCC7724CFEB7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				81C6E372292F09BAC9D4B2DA /* KeyCodeMapper.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		2A7BA072B492DC95B94FB7FD /* Resources */ = {
@@ -122,6 +140,7 @@
 				F450645BB19F396667F4ACF0 /* Models */,
 				2A7BA072B492DC95B94FB7FD /* Resources */,
 				434589C3C416EACF8E19BA0D /* Services */,
+				2003E28A0637CCC7724CFEB7 /* Utilities */,
 				1057312CD3E03F16624E3AD6 /* Views */,
 				99D9B0BDA6E732A6381257D4 /* Products */,
 			);
@@ -180,10 +199,6 @@
 				94471C2289E768CF640A4BBD /* CoverUp.xcodeproj */,
 				F78C5828EAE03CA44FCB1A80 /* CoverUpApp.swift */,
 				03927F10FE24910487C01E8F /* project.yml */,
-				F450645BB19F396667F4ACF0 /* Models */,
-				2A7BA072B492DC95B94FB7FD /* Resources */,
-				434589C3C416EACF8E19BA0D /* Services */,
-				1057312CD3E03F16624E3AD6 /* Views */,
 			);
 			name = CoverUp;
 			path = .;
@@ -257,8 +272,13 @@
 			);
 			mainGroup = 46E5032092540C3645D70929;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0997FC5C2F2211A50091E9F0 /* Products */;
+					ProjectRef = 94471C2289E768CF640A4BBD /* CoverUp.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1B63E065E2D7EF07AC33E7D9 /* CoverUp */,
@@ -291,7 +311,9 @@
 				F34C6CAC9B0EA24CF5CB63CE /* CoverUpApp.swift in Sources */,
 				611CB824FF369BAE3E89BFC1 /* HotkeyConfigView.swift in Sources */,
 				7A77E1449B548A0512C4D3E9 /* HotkeyManager.swift in Sources */,
+				0BB67D32A578D9AD5EBFBEEA /* KeyCodeMapper.swift in Sources */,
 				62025C0BB9E1274EE721ECD7 /* LoginItemManager.swift in Sources */,
+				2B42F81273C8D5DEBCBBBCD4 /* MainWindowController.swift in Sources */,
 				7F1009CB2D8ABDBE92B9BD93 /* SettingsManager.swift in Sources */,
 				1523F220C4A55F906782EEB6 /* TargetApp.swift in Sources */,
 				74D8D4557F2BF72EF861BAB5 /* WindowManager.swift in Sources */,
@@ -331,7 +353,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coverup.tests;
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoverUp.app/Contents/MacOS/CoverUp";
@@ -346,7 +371,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coverup.app;
 				SDKROOT = macosx;
 			};
@@ -360,7 +388,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coverup.app;
 				SDKROOT = macosx;
 			};
@@ -414,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -432,7 +463,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coverup.tests;
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoverUp.app/Contents/MacOS/CoverUp";
@@ -493,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;

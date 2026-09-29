@@ -1,10 +1,13 @@
 import SwiftUI
+import Carbon
 
 struct ContentView: View {
     @State private var settings = SettingsManager.load()
     @State private var showingAppPicker = false
     @State private var showingHotkeyConfig = false
     @State private var accessibilityGranted = HotkeyManager.isAccessibilityEnabled
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
 
     var body: some View {
         VStack(spacing: 0) {
@@ -13,7 +16,7 @@ struct ContentView: View {
                 Text("CoverUp")
                     .font(.headline)
                 Spacer()
-                Text("v1.0")
+                Text("v\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0")")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -83,7 +86,10 @@ struct ContentView: View {
 
                 HStack {
                     if settings.hotkeyConfiguration.isValid {
-                        Text(hotkeyDisplayString)
+                        Text(KeyCodeMapper.displayString(
+                            for: settings.hotkeyConfiguration.keyCode,
+                            modifiers: settings.hotkeyConfiguration.modifiers
+                        ))
                             .font(.system(.body, design: .monospaced))
                         Spacer()
                         if settings.hotkeyConfiguration.type == .eventTap && !accessibilityGranted {
@@ -94,6 +100,19 @@ struct ContentView: View {
                         Text("Not configured")
                             .font(.caption)
                             .foregroundStyle(.tertiary)
+                    }
+                }
+
+                // Accessibility warning
+                if settings.hotkeyConfiguration.type == .eventTap && !accessibilityGranted {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Accessibility access required")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                        Button("Open System Settings") {
+                            openAccessibilitySettings()
+                        }
+                        .font(.caption)
                     }
                 }
             }
@@ -118,7 +137,7 @@ struct ContentView: View {
             .padding()
         }
         .frame(width: 300)
-        .onChange(of: settings.launchAtLogin) { _, newValue in
+        .onChange(of: settings.launchAtLogin) { newValue in
             SettingsManager.save(settings)
             LoginItemManager.setLaunchAtLogin(enabled: newValue)
         }
@@ -133,13 +152,18 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingHotkeyConfig) {
             HotkeyConfigView(configuration: $settings.hotkeyConfiguration)
-                .onChange(of: settings.hotkeyConfiguration) { _, _ in
+                .onChange(of: settings.hotkeyConfiguration) { _ in
                     SettingsManager.save(settings)
                     registerHotkey()
                 }
         }
         .onAppear {
             accessibilityGranted = HotkeyManager.isAccessibilityEnabled
+        }
+        .alert("CoverUp", isPresented: $showingAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(alertMessage)
         }
     }
 
@@ -148,82 +172,9 @@ struct ContentView: View {
         SettingsManager.save(settings)
     }
 
-    private var hotkeyDisplayString: String {
-        guard let keyCode = settings.hotkeyConfiguration.keyCode else {
-            return "Not configured"
-        }
-
-        let keyString = keyCodeToString(keyCode)
-        let modifierSymbols = settings.hotkeyConfiguration.modifiers
-            .sorted()
-            .compactMap { modifierNames[$0] }
-            .joined(separator: "")
-
-        return modifierSymbols + keyString
-    }
-
-    private func keyCodeToString(_ keyCode: UInt16) -> String {
-        switch keyCode {
-        case 0: return "A"
-        case 1: return "S"
-        case 2: return "D"
-        case 3: return "F"
-        case 4: return "H"
-        case 5: return "G"
-        case 6: return "Z"
-        case 7: return "X"
-        case 8: return "C"
-        case 9: return "V"
-        case 11: return "B"
-        case 12: return "Q"
-        case 13: return "W"
-        case 14: return "E"
-        case 15: return "R"
-        case 16: return "Y"
-        case 17: return "T"
-        case 18: return "1"
-        case 19: return "2"
-        case 20: return "3"
-        case 21: return "4"
-        case 22: return "6"
-        case 23: return "5"
-        case 24: return "="
-        case 25: return "9"
-        case 26: return "7"
-        case 27: return "-"
-        case 28: return "8"
-        case 29: return "0"
-        case 30: return "]"
-        case 31: return "O"
-        case 32: return "U"
-        case 33: return "["
-        case 34: return "}"
-        case 35: return "P"
-        case 37: return "L"
-        case 38: return "J"
-        case 39: return "'"
-        case 40: return "K"
-        case 41: return ";"
-        case 42: return "\\"
-        case 43: return ","
-        case 44: return "/"
-        case 45: return "N"
-        case 46: return "M"
-        case 47: return "."
-        case 50: return "`"
-        case 51: return "\\"
-        case 53: return "⎋"
-        default: return "\(keyCode)"
-        }
-    }
-
-    private var modifierNames: [UInt32: String] {
-        [
-            cmdKey: "⌘",
-            shiftKey: "⇧",
-            optionKey: "⌥",
-            controlKey: "⌃"
-        ]
+    private func openAccessibilitySettings() {
+        let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!
+        NSWorkspace.shared.open(url)
     }
 
     private func registerHotkey() {
@@ -237,8 +188,17 @@ struct ContentView: View {
                 WindowManager.minimize(targetApps: settings.targetApps)
             }
         case .eventTap:
-            HotkeyManager.registerEventTap(with: config) {
+            let success = HotkeyManager.registerEventTap(with: config) {
                 WindowManager.minimize(targetApps: settings.targetApps)
+            }
+
+            if !success {
+                if !HotkeyManager.isAccessibilityEnabled {
+                    alertMessage = "Accessibility permissions are required for event tap hotkeys. Please grant CoverUp accessibility access in System Settings > Privacy & Security > Accessibility."
+                } else {
+                    alertMessage = "Failed to register hotkey. Please try a different key combination."
+                }
+                showingAlert = true
             }
         }
     }
